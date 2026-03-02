@@ -126,3 +126,8 @@ execVM "scripts\server\offloading\group_diag.sqf";
 if (KP_liberation_restart > 0) then {
     execVM "scripts\server\game\server_restart.sqf";
 };
+
+// Director Init
+if (isServer) then {
+    [] execVM "custom\director\director_init.sqf";
+};
