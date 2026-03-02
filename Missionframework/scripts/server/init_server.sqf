@@ -128,6 +128,10 @@ if (KP_liberation_restart > 0) then {
 };
 
 // Director Init
-if (isServer) then {
+if (isServer && {missionNamespace getVariable ["DIR_enable", true]}) then {
     [] execVM "custom\director\director_init.sqf";
 };
+
+// Director Kill Switch
+DIR_enable = false;
+publicVariable "DIR_enable";
